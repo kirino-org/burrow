@@ -1,0 +1,20 @@
+[package]
+name = "burrow"
+description = "High-performance filesystem indexer and in-memory FS structure representation"
+version = "0.1.0"
+edition = "2021"
+license = "WTFPL"
+
+homepage = "https://kirino.io"
+repository = "https://github.com/kirino-org/burrow"
+
+[features]
+tiny = []
+
+[dependencies]
+nix = { version = "0.26.2", default-features = false, features = ["dir"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
